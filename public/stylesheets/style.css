@@ -1,0 +1,30 @@
+body {
+    width:800px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin:auto;
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+header, footer{
+  padding:20px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: rgb(241, 226, 196);
+  
+}
+
+th{
+  background-color: rgb(240, 209, 153);
+}
+table{
+  margin: auto;
+  margin-bottom:20px;
+  width:750px
+}
+tr:nth-child(even) {
+  background-color: rgb(238, 227, 208);
+}
+
+th, td{
+  padding:5px;
+}

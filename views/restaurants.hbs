@@ -1,0 +1,46 @@
+<h2 style='text-align:center'><u>List of Restaurants</u></h2>
+<table border=2>
+    <tr>
+        <th rowspan='2'>Name</th>
+        <th colspan='4'>Address</th>
+        <th rowspan='2'>Borough</th>
+        <th rowspan='2'>Cuisine</th>
+        <th rowspan='2'>Restaurant_ID</th>
+    </tr>
+    <tr>
+        <th>Building</th>
+        <th>Coordinates</th>
+        <th>Street</th>
+        <th>Zipcode</th>
+    </tr>
+    {{#each data}}
+    <tr>
+        <td>
+        {{#if this.name}}
+        {{this.name}}
+        {{/if}}
+        {{#unless this.name}}
+        <p style='color:red'><i>Not Available</i></p>
+        {{/unless}}
+        </td>
+        <td>{{this.address.building}}</td>
+        <td>
+            {{#each this.address.coord}}
+            {{#if this}}
+            {{#decimal2}}
+                {{this}}
+            {{/decimal2}}
+            {{#unless @last}}
+            ,
+            {{/unless}}
+            {{/if}}
+            {{/each}}
+        </td>
+        <td>{{this.address.street}}</td>
+        <td>{{this.address.zipcode}}</td>
+        <td>{{this.borough}}</td>
+        <td>{{this.cuisine}}</td>
+        <td>{{this.restaurant_id}}</td>
+    </tr>
+    {{/each}}
+</table>
